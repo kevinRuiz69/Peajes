@@ -15,8 +15,11 @@ public class Carro extends Vehiculo {
         this.tipoCarro = tipoCarro;
     }
 
-    //SETTTERS Y GETTERS
+    public Carro(String placa, int numeroPeajes, String modelo, TipoCarro tipoCarro) {
+        this(placa, numeroPeajes, null, null, null, null, null, modelo, tipoCarro);
+    }
 
+    //SETTTERS Y GETTERS
 
     public TipoCarro getTipoCarro() {
         return tipoCarro;
@@ -36,7 +39,6 @@ public class Carro extends Vehiculo {
 
     //METODO TOSTRING
 
-
     @Override
     public String toString() {
         return "Carro{" +
@@ -52,11 +54,8 @@ public class Carro extends Vehiculo {
         double total = 10000;
 
         if (tipoCarro == TipoCarro.ELECTRICO) {
-
             total = total - (total * 0.20);
-
         } else if (tipoCarro == TipoCarro.SERVICIO_PUBLICO) {
-
             total = total + (total * 0.15);
         }
 

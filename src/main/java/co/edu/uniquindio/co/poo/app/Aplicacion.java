@@ -75,8 +75,7 @@ public class Aplicacion {
 
                     Carro carro = new Carro(
                             placa,
-                            0,
-                            modelo,
+                            0, modelo,
                             tipoCarro
                     );
 

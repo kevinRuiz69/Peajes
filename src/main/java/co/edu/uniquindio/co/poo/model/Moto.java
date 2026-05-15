@@ -1,6 +1,5 @@
 package co.edu.uniquindio.co.poo.model;
 
-
 public class Moto extends Vehiculo {
 
     //ATRIBUTOS
@@ -9,14 +8,16 @@ public class Moto extends Vehiculo {
 
     //CONSTRUCTOR
 
-
     public Moto(String placa, int numeroPeajes, PeajesQuindio peajesQuindio, Carro carro, Moto moto, Camion camion, Conductor conductor, double cilindraje) {
         super(placa, numeroPeajes, peajesQuindio, carro, moto, camion, conductor);
         this.cilindraje = cilindraje;
     }
 
-    //SETTERS AND GETTERS
+    public Moto(String placa, int numeroPeajes, double cilindraje) {
+        this(placa, numeroPeajes, null, null, null, null, null, cilindraje);
+    }
 
+    //SETTERS AND GETTERS
 
     public double getCilindraje() {
         return cilindraje;
@@ -27,7 +28,6 @@ public class Moto extends Vehiculo {
     }
 
     //METODO TOSTRING
-
 
     @Override
     public String toString() {
@@ -43,7 +43,6 @@ public class Moto extends Vehiculo {
         double total = 5000;
 
         if (cilindraje > 200) {
-
             total += 2000;
         }
 

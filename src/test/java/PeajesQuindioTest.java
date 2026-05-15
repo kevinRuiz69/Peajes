@@ -10,40 +10,54 @@ public class PeajesQuindioTest {
 
     @Test
     public void obtenerCamionesFiltradosTest() {
-
         PeajesQuindio sistema = new PeajesQuindio("123");
 
-        Camion camion1 = new Camion(
+        Camion camionValido = new Camion(
                 "AAA111",
                 6,
-                4,
-                15
+                null,
+                null,
+                null,
+                null,
+                null,
+                15,
+                4
         );
 
-        Camion camion2 = new Camion(
+        Camion camionConCargaMenor = new Camion(
                 "BBB222",
                 7,
-                2,
-                8
+                null,
+                null,
+                null,
+                null,
+                null,
+                8,
+                2
         );
 
-        Camion camion3 = new Camion(
+        Camion camionConPocosPeajes = new Camion(
                 "CCC333",
                 3,
-                5,
-                20
+                null,
+                null,
+                null,
+                null,
+                null,
+                20,
+                5
         );
 
-        sistema.agregarVehiculo(camion1);
-        sistema.agregarVehiculo(camion2);
-        sistema.agregarVehiculo(camion3);
+        sistema.agregarVehiculo(camionValido);
+        sistema.agregarVehiculo(camionConCargaMenor);
+        sistema.agregarVehiculo(camionConPocosPeajes);
 
-        ArrayList<Camion> resultado =
-                sistema.obtenerCamionesFiltrados();
+        ArrayList<Camion> resultado = sistema.obtenerCamionesFiltrados();
 
         assertEquals(1, resultado.size());
-
-        assertEquals("AAA111",
-                resultado.get(0).getPlaca());
+        assertTrue(resultado.contains(camionValido));
+        assertFalse(resultado.contains(camionConCargaMenor));
+        assertFalse(resultado.contains(camionConPocosPeajes));
+        assertEquals("AAA111", resultado.get(0).getPlaca());
     }
 }

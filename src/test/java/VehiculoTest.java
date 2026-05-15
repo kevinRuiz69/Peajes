@@ -9,41 +9,58 @@ import static org.junit.jupiter.api.Assertions.*;
 public class VehiculoTest {
 
     @Test
-    public void calcularPeajeVehiculosTest() {
-
-        // CARRO ELECTRICO
+    public void calcularPeajeCarroElectricoTest() {
         Carro carro = new Carro(
                 "ABC123",
                 0,
+                null,
+                null,
+                null,
+                null,
+                null,
                 "Mazda",
                 TipoCarro.ELECTRICO
         );
 
-        double resultadoCarro = carro.calcularPeaje();
+        double resultado = carro.calcularPeaje();
 
-        assertEquals(8000, resultadoCarro);
+        assertEquals(8000, resultado, 0.01);
+    }
 
-        // MOTO MAYOR A 200CC
+    @Test
+    public void calcularPeajeMotoMayorA200CcTest() {
         Moto moto = new Moto(
                 "XYZ999",
                 0,
+                null,
+                null,
+                null,
+                null,
+                null,
                 250
         );
 
-        double resultadoMoto = moto.calcularPeaje();
+        double resultado = moto.calcularPeaje();
 
-        assertEquals(7000, resultadoMoto);
+        assertEquals(7000, resultado, 0.01);
+    }
 
-        // CAMION CON CARGA MAYOR A 10
+    @Test
+    public void calcularPeajeCamionConCargaMayorA10Test() {
         Camion camion = new Camion(
                 "TRK777",
                 0,
-                4,
-                15
+                null,
+                null,
+                null,
+                null,
+                null,
+                15,
+                4
         );
 
-        double resultadoCamion = camion.calcularPeaje();
+        double resultado = camion.calcularPeaje();
 
-        assertEquals(30800, resultadoCamion);
+        assertEquals(30800, resultado, 0.01);
     }
 }

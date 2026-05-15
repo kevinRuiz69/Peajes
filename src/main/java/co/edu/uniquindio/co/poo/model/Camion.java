@@ -9,15 +9,17 @@ public class Camion extends Vehiculo{
 
     //CONSTRUCTOR
 
-
     public Camion(String placa, int numeroPeajes, PeajesQuindio peajesQuindio, Carro carro, Moto moto, Camion camion, Conductor conductor, double carga, double ejes) {
         super(placa, numeroPeajes, peajesQuindio, carro, moto, camion, conductor);
         this.carga = carga;
         this.ejes = ejes;
     }
 
-    //SETTERS Y GETTERS
+    public Camion(String placa, int numeroPeajes, double ejes, double carga) {
+        this(placa, numeroPeajes, null, null, null, null, null, carga, ejes);
+    }
 
+    //SETTERS Y GETTERS
 
     public double getCarga() {
         return carga;
@@ -37,7 +39,6 @@ public class Camion extends Vehiculo{
 
     //METODO TOSTRING
 
-
     @Override
     public String toString() {
         return "Camion{" +
@@ -53,11 +54,9 @@ public class Camion extends Vehiculo{
         double total = ejes * 7000;
 
         if (carga > 10) {
-
             total += total * 0.10;
         }
 
         return total;
     }
 }
-
